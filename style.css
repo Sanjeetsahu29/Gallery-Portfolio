@@ -1,0 +1,124 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap:20px; 
+    min-height: 100vh;
+    background: hsla(197, 100%, 63%, 1);
+    background: linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#40C9FF", endColorstr="#E81CFF", GradientType=1 );
+}
+
+.box{
+    background-color: red;
+    background-size: cover; 
+    /*ALL THE IMAGES WILL BE SHOWN FULL IN THE GIVEN DIMENSION */ 
+    background-position: top;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    background-color: #222;
+    background-blend-mode:hard-light;
+    transition: all 1s ease-in-out;
+}
+
+.left-text{
+    flex-basis: 30%;
+}
+
+.box:hover{
+    background-color: #999;
+    background-position: center;
+    box-shadow: 2px 4px 6px goldenrod;
+
+}
+
+/* Since images are different aspect therefore we can't see 
+full image in same dimension properly.
+
+*/
+.gallery{
+    flex-basis: 50%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 120px;
+    gap: 2px;
+}
+
+
+
+.heading{
+    font-size: 3rem;
+    color: whitesmoke;
+    text-align: left;
+}
+.subheading{
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: left;
+}
+
+.row-2{
+    grid-row: span 2;
+}
+
+.col-2{
+    grid-column: span 2;
+}
+
+
+/* --------------- MEDIA QUERY FOR WIDTH <=1024PX-------------------------*/
+
+@media screen and (max-width:500px) {
+    .container{
+        flex-direction: column;
+        background: hsla(340, 80%, 69%, 1);
+        background: linear-gradient(90deg, hsla(340, 80%, 69%, 1) 0%, hsla(15, 93%, 71%, 1) 100%);
+        background: -moz-linear-gradient(90deg, hsla(340, 80%, 69%, 1) 0%, hsla(15, 93%, 71%, 1) 100%);
+        background: -webkit-linear-gradient(90deg, hsla(340, 80%, 69%, 1) 0%, hsla(15, 93%, 71%, 1) 100%);
+        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#EF709B", endColorstr="#FA9372", GradientType=1 );
+    }
+    .gallery{
+        width: 100%;
+    }
+    .box{
+        grid-row: span 1;
+        grid-column: span 3;
+    }
+    .left-text{
+        margin: 10px 5px;
+    }
+    .gallery{
+        grid-auto-rows: 180px;
+        
+    }
+}
+
+
+@media screen and (max-width:800px) and (min-width:500px) {
+    .container{
+        flex-direction: row;
+    }
+    .gallery{
+        width: 100%;
+    }
+    .box{
+        grid-row: span 1;
+        grid-column: span 3;
+    }
+    .gallery{
+        grid-auto-rows: 140px;
+        
+    }
+}
