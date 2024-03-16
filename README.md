@@ -1,5 +1,5 @@
 # Gallery-Portfolio
-A responsive gallery portfolio website made by with using `HTML, CSS and JavaScript`.
+A responsive gallery portfolio website made by with using `HTML and CSS`.
 My motive behind making this project was to implement the `Flex` and `Grid` functionalities in my Project.
 Made a resonsive design using a `Media Query`
 <br>
